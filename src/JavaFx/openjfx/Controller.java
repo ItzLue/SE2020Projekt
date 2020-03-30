@@ -1,4 +1,4 @@
-package sample;
+package JavaFx.openjfx;
 
 public class Controller {
 }
