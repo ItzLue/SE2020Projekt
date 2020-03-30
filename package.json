@@ -1,0 +1,8 @@
+{
+  "name": "seprojekt2020",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "cucumber-html-reporter": "^5.2.0"
+  }
+}
