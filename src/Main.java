@@ -15,7 +15,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         //ahhahah
-        // Regin Test!!!
+        // Regin nye JDK TEST!
     }
 
 
