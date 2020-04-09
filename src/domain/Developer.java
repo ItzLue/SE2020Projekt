@@ -1,7 +1,5 @@
 package domain;
 
-import javax.persistence.Id;
-
 public class Developer {
 
     private String lastName;
