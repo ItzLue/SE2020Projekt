@@ -1,9 +1,9 @@
-package system;
+package System;
 
 import domain.Developer;
 import java.util.HashMap;
 
-public class system {
+public class System {
     protected Developer activeDeveloper;
     protected HashMap<String, Developer> developerHM = new HashMap<>();
 

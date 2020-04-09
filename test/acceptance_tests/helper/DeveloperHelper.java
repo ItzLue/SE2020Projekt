@@ -1,6 +1,5 @@
 package acceptance_tests.helper;
-import system.system;
-import domain.Developer;
+import System.System;
 import dto.DeveloperInfo;
 
 public class DeveloperHelper {
