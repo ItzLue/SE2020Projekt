@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "use_cases",
-	plugin = { "pretty"},
+	plugin = { "pretty", "html:target/cucumber-reports"},
 	monochrome=true, 
 	snippets = SnippetType.CAMELCASE,
 	glue = { "test.acceptance_tests"},
