@@ -18,7 +18,7 @@ public class SystemSteps {
     public DeveloperHelper helper;
     private DeveloperInfo developer;
 
-    public systemSteps(System system,DeveloperHelper helper) {
+    public SystemSteps(System system, DeveloperHelper helper) {
         this.system = system;
         this.helper = helper;
     }
