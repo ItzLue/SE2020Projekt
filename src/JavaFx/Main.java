@@ -14,8 +14,6 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        //ahhahah
-        // Regin nye JDK TEST!
     }
 
     public static void main(String[] args) {
