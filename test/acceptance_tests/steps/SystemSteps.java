@@ -10,9 +10,6 @@ import static org.junit.Assert.assertTrue;
 
 public class SystemSteps {
 
-    public SystemSteps() {
-
-    }
 
     private System system;
     public DeveloperHelper helper;
