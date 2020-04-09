@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "use_cases",
 	plugin = { "pretty", "html:target/cucumber-reports"},
-	monochrome=true, 
+	monochrome=true,
 	snippets = SnippetType.CAMELCASE,
 	glue = { "test.acceptance_tests"},
 	strict = true)
