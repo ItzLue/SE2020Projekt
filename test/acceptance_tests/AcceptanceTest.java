@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 	plugin = { "pretty", "html:target/cucumber-reports"},
 	monochrome=true, 
 	snippets = SnippetType.CAMELCASE,
-	glue = { "test.acceptance_tests"},
+	glue = { "acceptance_tests"},
 	strict = true)
 public class AcceptanceTest {
 
