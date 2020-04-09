@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import domain.Developer;
 
 public class DeveloperSteps {
 
@@ -70,4 +71,5 @@ public class DeveloperSteps {
     @Given("The following developer\\(s) is\\/are registered in the system")
     public void theFollowingDeveloperSIsAreRegisteredInTheSystem() {
     }
+
 }
