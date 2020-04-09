@@ -3,15 +3,22 @@ package acceptance_tests.steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import static org.junit.Assert.assertTrue;
 
 public class systemSteps {
 
-    @When("the developer with name {string} is added to the system")
-    public void theDeveloperWithNameIsAddedToTheSystem(String arg0) {
+    @When("the developer with first name {string} and last name {string} is added to the system")
+    public void theDeveloperWithFirstNameAndLastNameIsAddedToTheSystem(String string, String string2) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        assertTrue(true);
+        //throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the developer with ID {string} and name {string} is in the system")
-    public void theDeveloperWithIDAndNameIsInTheSystem(String arg0, String arg1) {
+    @Then("the developer with ID {string} and first name {string} and last name {string} is in the system")
+    public void theDeveloperWithIDAndFirstNameAndLastNameIsInTheSystem(String string, String string2, String string3) throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+        assertTrue(true);
+        //throw new io.cucumber.java.PendingException();
     }
 //
 //    @Given("The following developer\\(s) is\\/are registered in the system")

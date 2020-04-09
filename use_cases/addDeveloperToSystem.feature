@@ -5,7 +5,7 @@ Feature: Add a developer to the system
   # Main scenario
   Scenario: A developer is succesfully added to the system
     When the developer with first name "Ole" and last name "Smith" is added to the system
-    Then the developer with ID "OS01" and name "Ole Smith" is in the system
+    Then the developer with ID "OLSM" and first name "Ole" and last name "Smith" is in the system
 
 
 
