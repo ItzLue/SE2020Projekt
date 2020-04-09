@@ -29,6 +29,6 @@
       </VBox>
    </center>
    <top>
-      <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" text="Back to Menu" BorderPane.alignment="CENTER_LEFT" />
+      <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" text="Back to Menu" BorderPane.alignment="CENTER_LEFT" fx:id="BackBtn" onAction="#handleButtonAction" />
    </top>
 </BorderPane>
