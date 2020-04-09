@@ -6,13 +6,8 @@ public class Developer {
     protected String firstName;
     protected String ID;
 
-    public Developer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
@@ -20,15 +15,27 @@ public class Developer {
     }
 
     public String getFirstName() {
-        return this.firstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public void setID(String ID) {this.ID = ID; }
+    public String getID() {
+        return ID;
+    }
 
-    public String getID() {return this.ID; }
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Developer(String ID, String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ID = ID;
+    }
+
+
 
 }
