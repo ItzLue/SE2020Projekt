@@ -8,7 +8,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
 
-public class systemSteps {
+public class SystemSteps {
+
+    public SystemSteps() {
+
+    }
 
     private System system;
     public DeveloperHelper helper;
