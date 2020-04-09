@@ -2,11 +2,9 @@ package domain;
 
 public class Developer {
 
-    private String lastName;
-    private String firstName;
-
-
-    private String id;
+    protected String lastName;
+    protected String firstName;
+    protected String ID;
 
     public Developer(String firstName, String lastName) {
         this.firstName = firstName;
@@ -14,7 +12,7 @@ public class Developer {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -22,11 +20,15 @@ public class Developer {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
+    public void setID(String ID) {this.ID = ID; }
+
+    public String getID() {return this.ID; }
 
 }
