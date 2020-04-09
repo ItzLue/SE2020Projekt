@@ -5,7 +5,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
 
-public class systemSteps {
+public class SystemSteps {
+
+    public SystemSteps() {
+
+    }
 
     @When("the developer with first name {string} and last name {string} is added to the system")
     public void theDeveloperWithFirstNameAndLastNameIsAddedToTheSystem(String string, String string2) throws Exception {
