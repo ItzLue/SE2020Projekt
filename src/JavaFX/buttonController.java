@@ -20,7 +20,7 @@ public class buttonController implements Initializable {
 
     @FXML
     public void handleButtonAction(ActionEvent event) throws Exception {
-        Stage stage = null;
+        Stage stage = new Stage();
         Parent root = null;
 
         if (event.getSource() == AddDeveloperBtn) {
