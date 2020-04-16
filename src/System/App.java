@@ -23,7 +23,7 @@ public class App {
     protected DateServer dateServer = new DateServer();
 
     public void registerDeveloper(Developer developer) {
-        developerHM.put(developer.getId(),developer);
+        developerHM.put(developer.getID(),developer);
     }
 
     public void registerProject(Project project) {
@@ -57,8 +57,11 @@ public class App {
         this.activeDeveloper = null;
     }
 
+    public HashMap<String, Developer> getDeveloperHM() {
+        return this.developerHM;
+    }
 
-    public void getDeveloperHM() {
+    public void getDeveloperHMDenHerSkalHeddeNogetAndet() {
        Stream.of(developerHM.values().toString()).forEach(System.out::println);
     }
 
