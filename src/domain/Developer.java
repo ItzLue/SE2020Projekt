@@ -4,7 +4,7 @@ public class Developer {
 
     protected String lastName;
     protected String firstName;
-    protected String ID;
+    protected String id;
 
     public String getLastName() {
         return lastName;
@@ -22,12 +22,12 @@ public class Developer {
         this.firstName = firstName;
     }
 
-    public String getID() {
-        return ID;
+    public String getId() {
+        return id;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Developer(String firstName, String lastName) {

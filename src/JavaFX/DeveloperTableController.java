@@ -121,7 +121,7 @@ public class DeveloperTableController implements Initializable {
                     return true;
                 } else if (developer.getLastName().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                } else if (developer.getID().toLowerCase().contains(lowerCaseFilter)) {
+                } else if (developer.getId().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
                 } else {
                     return false;

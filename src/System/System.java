@@ -12,7 +12,7 @@ public class System {
 
     public void registerDeveloper(Developer developer) {
         String ID = developer.getFirstName().substring(0,2) + developer.getLastName().substring(0,2);
-        developer.setID(ID);
+        developer.setId(ID);
         developerHM.put(ID,developer);
     }
 
