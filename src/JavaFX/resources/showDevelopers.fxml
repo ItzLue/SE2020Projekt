@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.DeveloperTableController">
+   <children>
+      <Button layoutX="551.0" layoutY="516.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="17.0" prefWidth="211.0" text="Go Back to Main menu" />
+      <VBox layoutX="26.0" layoutY="19.0" prefHeight="281.0" prefWidth="542.0" spacing="10.0">
+         <children>
+            <TableView fx:id="devTab">
+               <columns>
+                  <TableColumn fx:id="firstNameCol" onEditCommit="#changeFirstNameCellEvent" prefWidth="154" text="First Name" />
+                  <TableColumn fx:id="lastNameCol" onEditCommit="#changeLastNameCellEvent" prefWidth="154.0" text="Last Name" />
+                  <TableColumn fx:id="idCol" prefWidth="91.0" text="id" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="firstNameTextField" prefWidth="175.0" promptText="First Name" />
+                  <TextField fx:id="lastNameTextField" prefWidth="175.0" promptText="Last Name" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newDeveloperButtonPushed" prefWidth="175.0" text="Add New Developer" />
+                  <TextField fx:id="searchBar" promptText="Search for a developer" />
+                  <Button mnemonicParsing="false" onAction="#deleteButtonPushed" prefWidth="175.0" text="Delete Developer(s) " visible="false" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

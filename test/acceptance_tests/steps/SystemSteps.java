@@ -1,8 +1,5 @@
 package acceptance_tests.steps;
 
-import acceptance_tests.helper.DeveloperHelper;
-import domain.Developer;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
@@ -12,12 +9,6 @@ public class SystemSteps {
 
 
     private System system;
-    public DeveloperHelper helper;
-
-    public SystemSteps(System system, DeveloperHelper helper) {
-        this.system = system;
-        this.helper = helper;
-    }
 
 
     @When("the developer with first name {string} and last name {string} is added to the system")
