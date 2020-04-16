@@ -9,14 +9,15 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Resources/frontPage.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("resources/frontPage.fxml"));
         primaryStage.setTitle("SoftwareHuset A/S");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
-//test
+
     public static void main(String[] args) {
         launch(args);
     }
