@@ -10,10 +10,7 @@ import ui.SoftwareHusetTextUI;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class App {
     protected Developer developer;

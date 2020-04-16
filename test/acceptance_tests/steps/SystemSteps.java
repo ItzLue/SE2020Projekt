@@ -1,5 +1,6 @@
 package acceptance_tests.steps;
 
+import domain.Developer;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
@@ -9,20 +10,28 @@ public class SystemSteps {
 
 
     private App app;
+    private ErrorMessageHolder errorMessageHolder;
+    private DeveloperHelper developerHelper;
 
+    public SystemSteps(App app, ErrorMessageHolder errorMessageHolder, DeveloperHelper developerHelper) {
+       this.app = app;
+       this.errorMessageHolder = errorMessageHolder;
+       this.developerHelper = developerHelper;
+    }
 
     @When("the developer with first name {string} and last name {string} is added to the system")
     public void theDeveloperWithFirstNameAndLastNameIsAddedToTheSystem(String firstName, String lastName) throws Exception {
         // Write code here that turns the phrase above into concrete actions
+        developerHelper.setDeveloper(new Developer(firstName, lastName));
+        app.registerDeveloper(developerHelper.getDeveloper());
 
-        assertTrue(true);
         //throw new io.cucumber.java.PendingException();
     }
 
     @Then("the developer with ID {string} and first name {string} and last name {string} is in the system")
     public void theDeveloperWithIDAndFirstNameAndLastNameIsInTheSystem(String string, String string2, String string3) throws Exception {
         // Write code here that turns the phrase above into concrete actions
-        assertTrue(true);
+        assertTrue(app.getDeveloperHM().containsKey(developerHelper.getDeveloper().getID()));
         //throw new io.cucumber.java.PendingException();
     }
 //
