@@ -2,7 +2,6 @@ package acceptance_tests.steps;
 
 import acceptance_tests.helper.DeveloperHelper;
 import domain.Developer;
-import dto.DeveloperInfo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,7 +13,6 @@ public class SystemSteps {
 
     private System system;
     public DeveloperHelper helper;
-    private DeveloperInfo developer;
 
     public SystemSteps(System system, DeveloperHelper helper) {
         this.system = system;
@@ -25,6 +23,7 @@ public class SystemSteps {
     @When("the developer with first name {string} and last name {string} is added to the system")
     public void theDeveloperWithFirstNameAndLastNameIsAddedToTheSystem(String firstName, String lastName) throws Exception {
         // Write code here that turns the phrase above into concrete actions
+
         assertTrue(true);
         //throw new io.cucumber.java.PendingException();
     }

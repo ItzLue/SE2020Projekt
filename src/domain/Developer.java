@@ -30,10 +30,9 @@ public class Developer {
         this.ID = ID;
     }
 
-    public Developer(String ID, String firstName, String lastName) {
+    public Developer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.ID = ID;
     }
 
 
