@@ -1,6 +1,6 @@
 package JavaFX;
 
-
+import System.App;
 import domain.Developer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +18,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,7 +43,7 @@ public class DeveloperTableController implements Initializable {
     ObservableList<Developer> developer = FXCollections.observableArrayList();
 
 
-    // Search bar
+        // Search bar
 
     @FXML
     private TextField searchBar;
@@ -60,7 +59,6 @@ public class DeveloperTableController implements Initializable {
 
         window.setScene(showDeveloperScene);
         window.show();
-        System.out.println(developer);
     }
 
     public void changeFirstNameCellEvent(TableColumn.CellEditEvent cellEditEvent) {
@@ -74,7 +72,11 @@ public class DeveloperTableController implements Initializable {
     }
 
     public void newDeveloperButtonPushed(ActionEvent event) {
-        developer.add(new Developer(firstNameTextField.getText(), lastNameTextField.getText()));
+
+
+
+        developer.add(new Developer("Hans","Hansen"));
+        devTab.setItems(developer);
     }
 
     public void deleteButtonPushed(ActionEvent event) {
@@ -101,7 +103,7 @@ public class DeveloperTableController implements Initializable {
         idCol.setCellValueFactory(new PropertyValueFactory<Developer, String>("id"));
 
         // Example list
-        devTab.setItems(getDevelopers());
+        //devTab.setItems(getDevelopers());
 
         // Update list
 
