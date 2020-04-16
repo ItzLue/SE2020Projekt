@@ -25,16 +25,18 @@ public class SimpleUI {
             System.out.println("Select a number (0-5): ");
             option = Integer.parseInt(in.nextLine());
 
-            if (option==1) {
+            if (option==0) {
                 break;
             }
+            else if (option==1){
+            }
             else if (option==2){
-                if (app.devHmEmpty());
-                else app.getDeveloperHM();
+                break;
             }
             else if (option==3){
                 System.out.println("Write first name and last name");
-                app.registerDeveloper(new Developer(in.nextLine(),in.nextLine()));
+                app.registerDeveloper(new Developer(in.next(),in.next()));
+                app.getDeveloperHM();
                 break;
             }
             else if (option==4){

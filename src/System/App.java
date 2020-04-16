@@ -6,6 +6,7 @@ import domain.Project;
 import javafx.beans.InvalidationListener;
 import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableMap;
+import javafx.scene.control.Tab;
 import ui.SoftwareHusetTextUI;
 
 import java.beans.PropertyChangeListener;
@@ -18,15 +19,13 @@ import java.util.Set;
 public class App {
     protected Developer developer;
     protected Developer activeDeveloper;
-    protected HashMap<String, Developer> developerHM = new HashMap<>();
-    protected HashMap<String, Project> projectHM = new HashMap<>();
+    protected HashMap<String, Developer> developerHM = new HashMap<String, Developer>();
+    protected HashMap<String, Project> projectHM = new HashMap<String,Project>();
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
     protected DateServer dateServer = new DateServer();
 
     public void registerDeveloper(Developer developer) {
-        String id = developer.getFirstName().substring(0,2) + developer.getLastName().substring(0,2);
-        developer.setId(id);
-        developerHM.put(id,developer);
+        developerHM.put(developer.getId(),developer);
     }
 
     public void registerProject(Project project) {
@@ -42,6 +41,14 @@ public class App {
         return ID;
     }
 
+    public App(){
+        developerHM.put("haha",new Developer("Hans", "Hansen"));
+    }
+
+    public static void main(String[] args) {
+
+
+    }
 
     public void setActiveDeveloper(Developer developer) {
         this.activeDeveloper = developer;
@@ -51,8 +58,9 @@ public class App {
         this.activeDeveloper = null;
     }
 
-    public HashMap<String, Developer> getDeveloperHM() {
-        return developerHM;
+
+    public Developer getDeveloperHM() {
+        return developerHM.get("haha");
     }
 
     public Calendar getDate() {

@@ -23,11 +23,11 @@ public class Developer {
     }
 
     public String getId() {
-        return id;
+        return firstName.substring(0,2) + lastName.substring(0,2);
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id =  firstName.substring(0,2) + lastName.substring(0,2);
     }
 
     public Developer(String firstName, String lastName) {
