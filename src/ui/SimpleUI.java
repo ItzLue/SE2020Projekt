@@ -29,9 +29,10 @@ public class SimpleUI {
                 break;
             }
             else if (option==1){
+                app.getDeveloperHM();
             }
             else if (option==2){
-                app.getDeveloperHM();
+
             }
             else if (option==3){
                 System.out.println("Write first name and last name");
