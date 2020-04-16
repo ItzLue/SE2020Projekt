@@ -1,0 +1,18 @@
+Index: src/JavaFX/resources/showDevelopers.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n\r\n<AnchorPane id=\"AnchorPane\" prefHeight=\"600.0\" prefWidth=\"800.0\" stylesheets=\"@style.css\" xmlns=\"http://javafx.com/javafx/10.0.2-internal\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"javafx.DeveloperTableController\">\r\n   <children>\r\n      <Button layoutX=\"551.0\" layoutY=\"516.0\" mnemonicParsing=\"false\" onAction=\"#changeScreenButtonPushed\" prefHeight=\"17.0\" prefWidth=\"211.0\" text=\"Go Back to Main menu\" />\r\n      <VBox layoutX=\"26.0\" layoutY=\"19.0\" prefHeight=\"281.0\" prefWidth=\"542.0\" spacing=\"10.0\">\r\n         <children>\r\n            <TableView fx:id=\"devTab\">\r\n               <columns>\r\n                  <TableColumn fx:id=\"firstNameCol\" onEditCommit=\"#changeFirstNameCellEvent\" prefWidth=\"154\" text=\"First Name\" />\r\n                  <TableColumn fx:id=\"lastNameCol\" onEditCommit=\"#changeLastNameCellEvent\" prefWidth=\"154.0\" text=\"Last Name\" />\r\n                  <TableColumn fx:id=\"idCol\" prefWidth=\"91.0\" text=\"id\" />\r\n               </columns>\r\n            </TableView>\r\n            <HBox alignment=\"CENTER_LEFT\" prefHeight=\"100.0\" prefWidth=\"200.0\" spacing=\"10.0\">\r\n               <children>\r\n                  <TextField fx:id=\"firstNameTextField\" prefWidth=\"175.0\" promptText=\"First Name\" />\r\n                  <TextField fx:id=\"lastNameTextField\" prefWidth=\"175.0\" promptText=\"Last Name\" />\r\n               </children>\r\n            </HBox>\r\n            <HBox prefHeight=\"100.0\" prefWidth=\"200.0\" spacing=\"10.0\">\r\n               <children>\r\n                  <Button mnemonicParsing=\"false\" onAction=\"#newDeveloperButtonPushed\" prefWidth=\"175.0\" text=\"Add New Developer\" />\r\n                  <TextField fx:id=\"searchBar\" promptText=\"Search for a developer\" />\r\n                  <Button mnemonicParsing=\"false\" onAction=\"#deleteButtonPushed\" prefWidth=\"175.0\" text=\"Delete Developer(s) \" visible=\"false\" />\r\n               </children>\r\n            </HBox>\r\n         </children>\r\n      </VBox>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/JavaFX/resources/showDevelopers.fxml	(revision 1803eaa2522c49f32fa3e1c883162160c38c694a)
++++ src/JavaFX/resources/showDevelopers.fxml	(date 1587039783026)
+@@ -3,7 +3,7 @@
+ <?import javafx.scene.control.*?>
+ <?import javafx.scene.layout.*?>
+ 
+-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.DeveloperTableController">
++<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.DeveloperTableController">
+    <children>
+       <Button layoutX="551.0" layoutY="516.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="17.0" prefWidth="211.0" text="Go Back to Main menu" />
+       <VBox layoutX="26.0" layoutY="19.0" prefHeight="281.0" prefWidth="542.0" spacing="10.0">
