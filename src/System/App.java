@@ -11,10 +11,8 @@ import ui.SoftwareHusetTextUI;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class App {
     protected Developer developer;
@@ -43,6 +41,7 @@ public class App {
 
     public App(){
         developerHM.put("haha",new Developer("Hans", "Hansen"));
+        developerHM.put("hehe",new Developer("Test","Test"));
     }
 
     public static void main(String[] args) {
@@ -59,8 +58,8 @@ public class App {
     }
 
 
-    public Developer getDeveloperHM() {
-        return developerHM.get("haha");
+    public void getDeveloperHM() {
+       Stream.of(developerHM.values().toString()).forEach(System.out::println);
     }
 
     public Calendar getDate() {

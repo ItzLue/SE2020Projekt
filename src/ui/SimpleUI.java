@@ -6,13 +6,13 @@ import System.App;
 
 public class SimpleUI {
 
-    private static App app;
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int option;
         String firstName;
         String lastName;
+        App app = new App();
 
         while (true){
 
@@ -31,13 +31,11 @@ public class SimpleUI {
             else if (option==1){
             }
             else if (option==2){
-                break;
+                app.getDeveloperHM();
             }
             else if (option==3){
                 System.out.println("Write first name and last name");
                 app.registerDeveloper(new Developer(in.next(),in.next()));
-                app.getDeveloperHM();
-                break;
             }
             else if (option==4){
 
