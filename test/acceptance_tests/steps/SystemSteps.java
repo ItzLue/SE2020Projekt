@@ -3,12 +3,12 @@ package acceptance_tests.steps;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
-import System.System;
+import System.App;
 
 public class SystemSteps {
 
 
-    private System system;
+    private App app;
 
 
     @When("the developer with first name {string} and last name {string} is added to the system")
