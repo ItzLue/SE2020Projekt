@@ -1,6 +1,7 @@
 package JavaFX;
 
-import Data.Developer;
+
+import domain.Developer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -120,7 +121,7 @@ public class DeveloperTableController implements Initializable {
                     return true;
                 } else if (developer.getLastName().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                } else if (developer.getId().toLowerCase().contains(lowerCaseFilter)) {
+                } else if (developer.getID().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
                 } else {
                     return false;
