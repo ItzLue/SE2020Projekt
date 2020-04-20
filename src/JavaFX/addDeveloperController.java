@@ -40,7 +40,6 @@ public class addDeveloperController implements Initializable {
     @FXML
     public void registerDeveloper() throws Exception{
 
-
         Developer newDeveloper = new Developer(firstnameField.getText(),
                                             lastnameField.getText());
 
