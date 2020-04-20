@@ -10,7 +10,6 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class App {
-    protected Developer developer;
     protected Developer activeDeveloper;
     protected HashMap<String, Developer> developerHM = new HashMap<String, Developer>();
     protected HashMap<String, Project> projectHM = new HashMap<String,Project>();
@@ -20,12 +19,12 @@ public class App {
     public void registerDeveloper(Developer developer) {
         String ID = "";
         if (developerHM.size() > 9) {
-            ID = developer.getFirstName().substring(0,2) + developer.getLastName().substring(0,2) + (developerHM.size()+1);
+            ID = developer.getFirstName().substring(0,2).toLowerCase() + developer.getLastName().substring(0,2).toLowerCase() + (developerHM.size()+1);
         } else {
-            ID = developer.getFirstName().substring(0,2) + developer.getLastName().substring(0,2) + 0 + (developerHM.size()+1);
+            ID = developer.getFirstName().substring(0,2).toLowerCase() + developer.getLastName().substring(0,2) .toLowerCase() + 0 + (developerHM.size()+1);
         }
 
-        String ID = developer.getFirstName().substring(0,2).toLowerCase() + developer.getLastName().substring(0,2).toLowerCase();
+
         developer.setId(ID);
         developerHM.put(developer.getID(),developer);
     }
@@ -50,6 +49,12 @@ public class App {
     public static void main(String[] args) {
 
 
+    }
+
+    public void setActiveDeveloper(String ID) {
+        if (developerHM.containsKey(ID)) {
+            setActiveDeveloper(developerHM.get(ID));
+        }
     }
 
     public void setActiveDeveloper(Developer developer) {
