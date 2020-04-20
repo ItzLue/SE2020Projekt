@@ -27,12 +27,6 @@ public class Project {
         this.initialized = true;
     }
 
-
-
-
-
-
-
     public void setProjectLeader(Developer developer) {
         if (initialized) {
             this.projectLeader = developer;

@@ -8,10 +8,11 @@ import System.App;
 
 public class SystemSteps {
 
-
     private App app;
     private ErrorMessageHolder errorMessageHolder;
     private DeveloperHelper developerHelper;
+    private System system;
+
 
     public SystemSteps(App app, ErrorMessageHolder errorMessageHolder, DeveloperHelper developerHelper) {
        this.app = app;

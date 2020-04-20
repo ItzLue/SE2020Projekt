@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class App {
     protected Developer developer;
     protected Developer activeDeveloper;
-    protected HashMap<String, Developer> developerHM = new HashMap<String, Developer>();
+    public HashMap<String, Developer> developerHM = new HashMap<String, Developer>();
     protected HashMap<String, Project> projectHM = new HashMap<String,Project>();
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
     protected DateServer dateServer = new DateServer();
@@ -58,7 +58,10 @@ public class App {
     }
 
     public void getDevValues() {
-       Stream.of(developerHM.values().toString()).forEach(System.out::println);
+//       Stream.of(developerHM.values().toString()).forEach(System.out::println);
+        for (Developer developer : developerHM.values()) {
+            System.out.println(developer);
+        }
     }
 
     public Calendar getDate() {
