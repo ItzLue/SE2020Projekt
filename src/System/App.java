@@ -7,10 +7,8 @@ import domain.Project;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class App {
-    protected Developer developer;
     protected Developer activeDeveloper;
     public HashMap<String, Developer> developerHM = new HashMap<String, Developer>();
     protected HashMap<String, Project> projectHM = new HashMap<String,Project>();
@@ -18,7 +16,14 @@ public class App {
     protected DateServer dateServer = new DateServer();
 
     public void registerDeveloper(Developer developer) {
-        String ID = developer.getFirstName().substring(0,2).toLowerCase() + developer.getLastName().substring(0,2).toLowerCase();
+        String ID = "";
+        if (developerHM.size() > 9) {
+            ID = developer.getFirstName().substring(0,2).toLowerCase() + developer.getLastName().substring(0,2).toLowerCase() + (developerHM.size()+1);
+        } else {
+            ID = developer.getFirstName().substring(0,2).toLowerCase() + developer.getLastName().substring(0,2) .toLowerCase() + 0 + (developerHM.size()+1);
+        }
+
+
         developer.setId(ID);
         developerHM.put(developer.getID(),developer);
     }
@@ -32,17 +37,26 @@ public class App {
         String weekNumber = Integer.toString(getDate().get(Calendar.WEEK_OF_YEAR));
         String year = Integer.toString(getDate().get(Calendar.YEAR)).substring(2);
         String runningNumber = Integer.toString(projectHM.size()+1);
-        String ID = year + weekNumber + runningNumber;
-        return ID;
+        return year + weekNumber + runningNumber;
     }
 
     public App(){
         registerDeveloper(new Developer("Hans","Hansen"));
+        registerProject(new Project());
     }
 
     public static void main(String[] args) {
 
+    }
 
+    public void setDateServer(DateServer dateServer) {
+        this.dateServer = dateServer;
+    }
+
+    public void setActiveDeveloper(String ID) {
+        if (developerHM.containsKey(ID)) {
+            setActiveDeveloper(developerHM.get(ID));
+        }
     }
 
     public void setActiveDeveloper(Developer developer) {
@@ -57,10 +71,19 @@ public class App {
         return this.developerHM;
     }
 
+    public HashMap<String, Project> getProjectHM() {
+        return this.projectHM;
+    }
+
     public void getDevValues() {
 //       Stream.of(developerHM.values().toString()).forEach(System.out::println);
         for (Developer developer : developerHM.values()) {
             System.out.println(developer);
+        }
+    }
+    public void getProjectValues(){
+        for (Project project : projectHM.values()){
+            System.out.println(project);
         }
     }
 
@@ -69,6 +92,10 @@ public class App {
     }
     public void addObserver(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
+    }
+
+    public Developer getActiveDeveloper() {
+        return activeDeveloper;
     }
 
     public boolean devHmEmpty(){

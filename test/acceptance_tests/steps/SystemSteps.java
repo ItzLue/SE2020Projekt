@@ -1,57 +1,69 @@
 package acceptance_tests.steps;
 
 import domain.Developer;
+import domain.Project;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
 import System.App;
+
+import java.util.List;
 
 public class SystemSteps {
 
     private App app;
     private ErrorMessageHolder errorMessageHolder;
     private DeveloperHelper developerHelper;
-    private System system;
+    private ProjectHelper projectHelper;
+    private MockDateHolder dateHolder;
 
-
-    public SystemSteps(App app, ErrorMessageHolder errorMessageHolder, DeveloperHelper developerHelper) {
+    public SystemSteps(App app, ErrorMessageHolder errorMessageHolder, DeveloperHelper developerHelper, ProjectHelper projectHelper, MockDateHolder dateHolder) {
        this.app = app;
        this.errorMessageHolder = errorMessageHolder;
        this.developerHelper = developerHelper;
+       this.projectHelper = projectHelper;
+       this.dateHolder = dateHolder;
+    }
+
+    @Given("There is a Developer with first name {string} and last name {string}")
+    public void thereIsADeveloperWithFirstNameAndLastName(String firstName, String lastName) {
+        developerHelper.setDeveloper(new Developer(firstName, lastName));
+        assertTrue(developerHelper.getDeveloper().getFirstName() == firstName && developerHelper.getDeveloper().getLastName() == lastName);
     }
 
     @When("the developer with first name {string} and last name {string} is added to the system")
     public void theDeveloperWithFirstNameAndLastNameIsAddedToTheSystem(String firstName, String lastName) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
-        developerHelper.setDeveloper(new Developer(firstName, lastName));
         app.registerDeveloper(developerHelper.getDeveloper());
-
-        //throw new io.cucumber.java.PendingException();
     }
 
     @Then("the developer with ID {string} and first name {string} and last name {string} is in the system")
     public void theDeveloperWithIDAndFirstNameAndLastNameIsInTheSystem(String string, String string2, String string3) throws Exception {
-        // Write code here that turns the phrase above into concrete actions
         assertTrue(app.getDeveloperHM().containsKey(developerHelper.getDeveloper().getID()));
-        //throw new io.cucumber.java.PendingException();
     }
-//
-//    @Given("The following developer\\(s) is\\/are registered in the system")
-//    public void theFollowingDeveloperSIsAreRegisteredInTheSystem() {
-//    }
-//
-//    @Given("A project with ID {string} is created")
-//    public void aProjectWithIDIsCreated(String arg0) {
-//    }
-//
-//    @When("The project with ID {string} is added to the system")
-//    public void theProjectWithIDIsAddedToTheSystem(String arg0) {
-//    }
-//
-//    @Then("There is a project with ID {string} in the system")
-//    public void thereIsAProjectWithIDInTheSystem(String arg0) {
-//    }
-//
+
+    @Given("The following developers are registered in the system")
+    public void theFollowingDeveloperSIsAreRegisteredInTheSystem(List<List<String>> developers) {
+        for (List<String> developerInfo : developers) {
+            app.registerDeveloper(new Developer(developerInfo.get(0), developerInfo.get(1)));
+        }
+    }
+
+    @Given("A project is created")
+    public void aProjectIsCreated() {
+        projectHelper.setProject(new Project());
+    }
+
+    @When("The project is added to the system")
+    public void theProjectIsAddedToTheSystem() {
+        app.registerProject(projectHelper.getProject());
+    }
+
+    @Then("There is a project in the system")
+    public void thereIsAProjectInTheSystem() {
+        assertTrue(!(app.getProjectHM().isEmpty()));
+    }
+
 //    @When("the developer with ID {string} and name {string} is set as project leader for project with ID {string}")
 //    public void theDeveloperWithIDAndNameIsSetAsProjectLeaderForProjectWithID(String arg0, String arg1, String arg2) {
 //    }

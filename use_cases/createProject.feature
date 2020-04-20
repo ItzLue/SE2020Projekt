@@ -2,17 +2,20 @@ Feature: Create a project
   Description: A developer creates a project
   Actors: Developer
 
-#  #background
-#  Background: There is a developer registered in the system
-#    Given The following developer(s) is/are registered in the system
-#      | HAMA | Hans Madsen|
-#
-## Main scenario
-#  Scenario: A developer creates a project
-#    Given A project with ID "030901" is created
-#    When The project with ID "030901" is added to the system
-#    Then There is a project with ID "030901" in the system
-#
+  #background
+  Background: There is a developer registered in the system
+    Given There is a Developer with first name "Ole" and last name "Smith"
+    When the developer with first name "Ole" and last name "Smith" is added to the system
+    Then the developer with ID "OLSM" and first name "Ole" and last name "Smith" is in the system
+#    Given The following developers are registered in the system
+#      | Hans | Madsen |
+
+# Main scenario
+  Scenario: A developer creates a project
+    Given A project is created
+    When The project is added to the system
+    Then There is a project in the system
+
 #    #Main fail scenario
 #  Scenario: A developer creates a project with an already used ID
 #    Given A project with ID "030901" is created
