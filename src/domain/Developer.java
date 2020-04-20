@@ -38,8 +38,8 @@ public class Developer {
 
     @Override
     public String toString() {
-        return "firstName ='" + firstName + '\'' +
-                ", lastName ='" + lastName + '\'' +
-                ", ID ='" + ID + '\'';
+        return "first name: '" + firstName + '\'' +
+                ", last mame: '" + lastName + '\'' +
+                ", ID: '" + ID + '\'';
     }
 }

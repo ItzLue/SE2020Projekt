@@ -26,13 +26,6 @@ public class Project {
     public void initProject() {
         this.initialized = true;
     }
-
-
-
-
-
-
-
     public void setProjectLeader(Developer developer) {
         if (initialized) {
             this.projectLeader = developer;
@@ -50,6 +43,12 @@ public class Project {
         return this.ID;
     }
 
+    @Override
+    public String toString() {
+        return  ", name:'" + name + '\'' +
+                ", ID: '" + ID + '\'' +
+                "projectLeader: " + projectLeader +
+                ", activityList: " + activityList;
 
-
+    }
 }
