@@ -40,7 +40,6 @@ public class Developer {
     public String toString() {
         return "firstName ='" + firstName + '\'' +
                 ", lastName ='" + lastName + '\'' +
-                ", ID ='" + ID + '\'' +
-                '}';
+                ", ID ='" + ID + '\'';
     }
 }

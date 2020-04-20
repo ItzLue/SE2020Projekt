@@ -23,7 +23,7 @@ public class SimpleUI {
             System.out.println("   4) add projects");
             System.out.println("   5) Cancel");
             System.out.println("Select a number (0-5): ");
-            option = Integer.parseInt(in.nextLine());
+            option = (in.nextInt());
 
             if (option==0) {
                 break;

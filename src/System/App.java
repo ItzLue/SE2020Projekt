@@ -18,7 +18,7 @@ public class App {
     protected DateServer dateServer = new DateServer();
 
     public void registerDeveloper(Developer developer) {
-        String ID = developer.getFirstName().substring(0,2) + developer.getLastName().substring(0,2);
+        String ID = developer.getFirstName().substring(0,2).toLowerCase() + developer.getLastName().substring(0,2).toLowerCase();
         developer.setId(ID);
         developerHM.put(developer.getID(),developer);
     }
