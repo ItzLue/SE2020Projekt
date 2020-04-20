@@ -58,6 +58,10 @@ public class Project {
                 ", activityList: " + activityList;
     }
 
+    public boolean isInitialized() {
+        return initialized;
+    }
+
     public void setInterval(Interval interval) {
         this.interval = interval;
     }

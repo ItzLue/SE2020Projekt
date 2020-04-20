@@ -47,7 +47,10 @@ public class App {
 
     public static void main(String[] args) {
 
+    }
 
+    public void setDateServer(DateServer dateServer) {
+        this.dateServer = dateServer;
     }
 
     public void setActiveDeveloper(String ID) {
@@ -66,6 +69,10 @@ public class App {
 
     public HashMap<String, Developer> getDeveloperHM() {
         return this.developerHM;
+    }
+
+    public HashMap<String, Project> getProjectHM() {
+        return this.projectHM;
     }
 
     public void getDevValues() {
