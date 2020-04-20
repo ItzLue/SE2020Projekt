@@ -64,6 +64,7 @@ public class DeveloperTableController implements Initializable {
     public void changeFirstNameCellEvent(TableColumn.CellEditEvent cellEditEvent) {
         Developer developerSelected = devTab.getSelectionModel().getSelectedItem();
         developerSelected.setFirstName(cellEditEvent.getNewValue().toString());
+
     }
 
     public void changeLastNameCellEvent(TableColumn.CellEditEvent cellEditEvent) {
@@ -73,13 +74,12 @@ public class DeveloperTableController implements Initializable {
 
     public void newDeveloperButtonPushed(ActionEvent event) {
 
-
-
         developer.add(new Developer("Hans","Hansen"));
         devTab.setItems(developer);
     }
 
     public void deleteButtonPushed(ActionEvent event) {
+
 
         ObservableList<Developer> selectedRows, allDevelopers;
         allDevelopers = devTab.getItems();
