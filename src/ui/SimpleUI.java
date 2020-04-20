@@ -1,46 +1,69 @@
 package ui;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Scanner;
 import domain.*;
 import System.App;
 
-public class SimpleUI {
+public class SimpleUI{
+    App app = new App();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        new SimpleUI().mainLoop();
+    }
+
+    public void mainLoop() throws IOException {
         Scanner in = new Scanner(System.in);
-        int option;
-        String firstName;
-        String lastName;
-        App app = new App();
+        int choice;
 
         while (true){
-            System.out.println(" Active developer: " + app.getActiveDeveloper());
-            System.out.println("   1) Show developers");
-            System.out.println("   2) Add developers");
-            System.out.println("   3) Show projects");
-            System.out.println("   4) add projects");
-            System.out.println("   5) Exit");
-            System.out.println("Select a number (1-5): ");
-            option = (in.nextInt());
+            showMenu();
 
-             if (option==1){
-                 if (!app.devHmEmpty()){
-                     app.getDevValues();
-                 } else app.getDevValues();
+            choice = (in.nextInt());
+            if (choice == 1) {
+                System.out.println("Insert developer's ID:");
+                app.setActiveDeveloper(in.next());
+            }
+            else if (choice == 2){
+                if (!app.devHmEmpty()){
+                    app.getDevValues();
+                } else app.getDevValues();
 
             }
-            else if (option==2){
+            else if (choice == 3){
                 System.out.println("Write first name and last name");
                 app.registerDeveloper(new Developer(in.next(),in.next()));
             }
-            else if (option==3){
-                System.out.println("Write project name");
-            }
-            else if (option==4){
+            else if (choice == 4){
                 app.getProjectValues();
-            }else if (option==5) {
+
+            }
+            else if (choice == 5){
+                System.out.println("Write project name");
+
+            }
+            else if (choice == 6) {
+
+            }
+            else if (choice == 0) {
                 break;
             }
         }
+    }
+
+    public void showMenu() {
+        System.out.println("Active developer: " + app.getActiveDeveloper());
+        System.out.println("Select a number (1-5): ");
+        System.out.println("   1) Set active developer");
+        System.out.println("   2) Show developers");
+        System.out.println("   3) Add developers");
+        System.out.println("   4) Show projects");
+        System.out.println("   5) add projects");
+        if(app.activeDeveloper != null) {
+            System.out.println("   6) Set worked hours");
+        }
+        System.out.println("   0) Exit");
     }
 }

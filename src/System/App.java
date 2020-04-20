@@ -9,7 +9,7 @@ import java.beans.PropertyChangeSupport;
 import java.util.*;
 
 public class App {
-    protected Developer activeDeveloper;
+    public Developer activeDeveloper;
     public HashMap<String, Developer> developerHM = new HashMap<String, Developer>();
     protected HashMap<String, Project> projectHM = new HashMap<String,Project>();
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
@@ -40,13 +40,6 @@ public class App {
         return year + weekNumber + runningNumber;
     }
 
-    public App(){
-    }
-
-    public static void main(String[] args) {
-
-    }
-
     public void setDateServer(DateServer dateServer) {
         this.dateServer = dateServer;
     }
@@ -59,10 +52,6 @@ public class App {
 
     public void setActiveDeveloper(Developer developer) {
         this.activeDeveloper = developer;
-    }
-
-    public void setActiveDeveloper() {
-        this.activeDeveloper = null;
     }
 
     public HashMap<String, Developer> getDeveloperHM() {
@@ -88,12 +77,16 @@ public class App {
     public Calendar getDate() {
         return dateServer.getDate();
     }
+
     public void addObserver(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
     }
 
-    public Developer getActiveDeveloper() {
-        return activeDeveloper;
+    public String getActiveDeveloper() {
+        if(activeDeveloper == null) {
+            return null;
+        }
+        return activeDeveloper.getID();
     }
 
     public boolean devHmEmpty(){

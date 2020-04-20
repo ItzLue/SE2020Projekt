@@ -39,7 +39,7 @@ public class Developer {
     @Override
     public String toString() {
         return "first name: '" + firstName + '\'' +
-                ", last mame: '" + lastName + '\'' +
+                ", last name: '" + lastName + '\'' +
                 ", ID: '" + ID + '\'';
     }
 }
