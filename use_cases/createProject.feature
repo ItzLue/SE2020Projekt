@@ -12,9 +12,9 @@ Feature: Create a project
 
 # Main scenario
   Scenario: A developer creates a project
-    Given A project is created
+    Given A project with name "Enigma Codebreaker " is created
     When The project is added to the system
-    Then There is a project in the system
+    Then There is a project in the system with name "Enigma Codebreaker"
 
 #    #Main fail scenario
 #  Scenario: A developer creates a project with an already used ID

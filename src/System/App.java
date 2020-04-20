@@ -41,8 +41,6 @@ public class App {
     }
 
     public App(){
-        registerDeveloper(new Developer("Hans","Hansen"));
-        registerProject(new Project());
     }
 
     public static void main(String[] args) {

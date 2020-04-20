@@ -17,7 +17,8 @@ public class Project {
     private String ID = "";
     protected String name;
 
-    public Project() {
+    public Project(String name) {
+        this.name = name;
         this.initialized = false;
     }
 

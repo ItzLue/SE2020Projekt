@@ -86,11 +86,11 @@ formatter.scenario({
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "A project is created",
+  "name": "A project with name \"Enigma Codebreaker \" is created",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.aProjectIsCreated()"
+  "location": "acceptance_tests.steps.SystemSteps.aProjectWithNameIsCreated(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -106,11 +106,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "There is a project in the system",
+  "name": "There is a project in the system with name \"Enigma Codebreaker\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.thereIsAProjectInTheSystem()"
+  "location": "acceptance_tests.steps.SystemSteps.thereIsAProjectInTheSystemWithName(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -130,11 +130,9 @@ formatter.step({
   "name": "A project is created",
   "keyword": "Given "
 });
-formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.aProjectIsCreated()"
-});
+formatter.match({});
 formatter.result({
-  "status": "passed"
+  "status": "undefined"
 });
 formatter.step({
   "name": "The project is added to the system",
@@ -144,17 +142,15 @@ formatter.match({
   "location": "acceptance_tests.steps.SystemSteps.theProjectIsAddedToTheSystem()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "There is a project in the system",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.thereIsAProjectInTheSystem()"
-});
+formatter.match({});
 formatter.result({
-  "status": "passed"
+  "status": "undefined"
 });
 formatter.scenario({
   "name": "A project is initialized",
@@ -165,100 +161,30 @@ formatter.step({
   "name": "The project has not been initialized",
   "keyword": "Given "
 });
-formatter.match({});
+formatter.match({
+  "location": "acceptance_tests.steps.ProjectSteps.theProjectHasNotBeenInitialized()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "skipped"
 });
 formatter.step({
   "name": "The project is initialized by the user",
   "keyword": "When "
 });
-formatter.match({});
+formatter.match({
+  "location": "acceptance_tests.steps.ProjectSteps.theProjectIsInitializedByTheUser()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "skipped"
 });
 formatter.step({
   "name": "The project is initialized",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.uri("file:use_cases/setActiveDeveloper.feature");
-formatter.feature({
-  "name": "the active developer is chosen",
-  "description": "  Description: acvite developies\n  Actors: Developer",
-  "keyword": "Feature"
-});
-formatter.background({
-  "name": "There is a developer registered in the system",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "There is a Developer with first name \"Ole\" and last name \"Smith\"",
-  "keyword": "Given "
-});
 formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.thereIsADeveloperWithFirstNameAndLastName(java.lang.String,java.lang.String)"
+  "location": "acceptance_tests.steps.ProjectSteps.theProjectIsInitialized()"
 });
 formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the developer with first name \"Ole\" and last name \"Smith\" is added to the system",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.theDeveloperWithFirstNameAndLastNameIsAddedToTheSystem(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the developer with ID \"OLSM\" and first name \"Ole\" and last name \"Smith\" is in the system",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.theDeveloperWithIDAndFirstNameAndLastNameIsInTheSystem(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "A developer creates a project",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "A project is created",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.aProjectIsCreated()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "The project is added to the system",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.theProjectIsAddedToTheSystem()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "There is a project in the system",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "acceptance_tests.steps.SystemSteps.thereIsAProjectInTheSystem()"
-});
-formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 });

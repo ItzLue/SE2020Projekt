@@ -26,7 +26,6 @@ public class ProjectSteps {
 
     @Given("The project has not been initialized")
     public void theProjectHasNotBeenInitialized() {
-        app.getProjectHM().forEach((String, ));
         assertFalse(false);
     }
 

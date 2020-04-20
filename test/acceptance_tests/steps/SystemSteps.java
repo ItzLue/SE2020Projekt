@@ -49,20 +49,22 @@ public class SystemSteps {
         }
     }
 
-    @Given("A project is created")
-    public void aProjectIsCreated() {
-        projectHelper.setProject(new Project());
+    @Given("A project with name {string} is created")
+    public void aProjectWithNameIsCreated(String name) throws Exception{
+        projectHelper.setProject(new Project(name));
     }
-
     @When("The project is added to the system")
-    public void theProjectIsAddedToTheSystem() {
+    public void theProjectIsAddedToTheSystem() throws Exception{
         app.registerProject(projectHelper.getProject());
     }
 
-    @Then("There is a project in the system")
-    public void thereIsAProjectInTheSystem() {
+    @Then("There is a project in the system with name {string}")
+    public void thereIsAProjectInTheSystemWithName(String string) throws Exception{
         assertTrue(!(app.getProjectHM().isEmpty()));
     }
+
+
+
 
 //    @When("the developer with ID {string} and name {string} is set as project leader for project with ID {string}")
 //    public void theDeveloperWithIDAndNameIsSetAsProjectLeaderForProjectWithID(String arg0, String arg1, String arg2) {
