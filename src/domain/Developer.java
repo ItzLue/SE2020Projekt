@@ -2,8 +2,8 @@ package domain;
 
 public class Developer {
 
-    protected String lastName;
     protected String firstName;
+    protected String lastName;
     protected String ID;
 
     public String getLastName() {
@@ -36,5 +36,11 @@ public class Developer {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "firstName ='" + firstName + '\'' +
+                ", lastName ='" + lastName + '\'' +
+                ", ID ='" + ID + '\'' +
+                '}';
+    }
 }

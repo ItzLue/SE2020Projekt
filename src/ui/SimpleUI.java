@@ -29,7 +29,7 @@ public class SimpleUI {
                 break;
             }
             else if (option==1){
-                app.getDeveloperHM();
+                app.getDevValues();
             }
             else if (option==2){
 

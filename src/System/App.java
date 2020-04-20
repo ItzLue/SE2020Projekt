@@ -3,11 +3,6 @@ package System;
 import time.DateServer;
 import domain.Developer;
 import domain.Project;
-import javafx.beans.InvalidationListener;
-import javafx.collections.MapChangeListener;
-import javafx.collections.ObservableMap;
-import javafx.scene.control.Tab;
-import ui.SoftwareHusetTextUI;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -23,6 +18,8 @@ public class App {
     protected DateServer dateServer = new DateServer();
 
     public void registerDeveloper(Developer developer) {
+        String ID = developer.getFirstName().substring(0,2) + developer.getLastName().substring(0,2);
+        developer.setId(ID);
         developerHM.put(developer.getID(),developer);
     }
 
@@ -40,8 +37,7 @@ public class App {
     }
 
     public App(){
-        developerHM.put("haha",new Developer("Hans", "Hansen"));
-        developerHM.put("hehe",new Developer("Test","Test"));
+        registerDeveloper(new Developer("Hans","Hansen"));
     }
 
     public static void main(String[] args) {
@@ -61,7 +57,7 @@ public class App {
         return this.developerHM;
     }
 
-    public void getDeveloperHMDenHerSkalHeddeNogetAndet() {
+    public void getDevValues() {
        Stream.of(developerHM.values().toString()).forEach(System.out::println);
     }
 
