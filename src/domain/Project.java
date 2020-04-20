@@ -50,6 +50,12 @@ public class Project {
         return this.ID;
     }
 
+    @Override
+    public String toString() {
+        return  ", name:'" + name + '\'' +
+                ", ID: '" + ID + '\'' +
+                "projectLeader: " + projectLeader +
+                ", activityList: " + activityList;
     public void setInterval(Interval interval) {
         this.interval = interval;
     }

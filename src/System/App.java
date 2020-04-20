@@ -7,7 +7,6 @@ import domain.Project;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class App {
     protected Developer activeDeveloper;
@@ -38,12 +37,12 @@ public class App {
         String weekNumber = Integer.toString(getDate().get(Calendar.WEEK_OF_YEAR));
         String year = Integer.toString(getDate().get(Calendar.YEAR)).substring(2);
         String runningNumber = Integer.toString(projectHM.size()+1);
-        String ID = year + weekNumber + runningNumber;
-        return ID;
+        return year + weekNumber + runningNumber;
     }
 
     public App(){
         registerDeveloper(new Developer("Hans","Hansen"));
+        registerProject(new Project());
     }
 
     public static void main(String[] args) {
@@ -70,7 +69,14 @@ public class App {
     }
 
     public void getDevValues() {
-       Stream.of(developerHM.values().toString()).forEach(System.out::println);
+       for (Developer developer : developerHM.values()){
+            System.out.println(developer);
+        }
+    }
+    public void getProjectValues(){
+        for (Project project : projectHM.values()){
+            System.out.println(project);
+        }
     }
 
     public Calendar getDate() {
@@ -78,6 +84,10 @@ public class App {
     }
     public void addObserver(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
+    }
+
+    public Developer getActiveDeveloper() {
+        return activeDeveloper;
     }
 
     public boolean devHmEmpty(){
