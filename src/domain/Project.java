@@ -52,10 +52,12 @@ public class Project {
 
     @Override
     public String toString() {
-        return  ", name:'" + name + '\'' +
+        return ", name:'" + name + '\'' +
                 ", ID: '" + ID + '\'' +
                 "projectLeader: " + projectLeader +
                 ", activityList: " + activityList;
+    }
+
     public void setInterval(Interval interval) {
         this.interval = interval;
     }
